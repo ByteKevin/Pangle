@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Kevin-Ad'
-  s.version          = '7.5.6.0'
+  s.version          = '7.7.7.1'
   s.summary          = 'Kevin-Ad is a SDK from Bytedance providing union AD service.'
   s.description      = <<-DESC
   Kevin-Ad provides ADs which include native、banner、RewardVideo、FullscreenVideo etc.
@@ -18,20 +18,33 @@ Pod::Spec.new do |s|
   s.author           = { 'bytedance' => 'xxxx@bytedance.com' }
 
   s.homepage         = 'https://github.com/bytedance/Bytedance-UnionAD.git'
-  s.source           = { :http => "https://sf16-fe-tos-sg.i18n-pglstatp.com/obj/pangle-sdk-static-va/Debug/7.5.6.0/SDK.zip", :sha256 => "5869fcd9dda59b77a79b62e27707c7c40bd17dd58f1780b6068b53be492158f7" }
+  s.source           = { :http => "https://sf16-fe-tos-sg.i18n-pglstatp.com/obj/pangle-sdk-static-va/Debug/7.7.7.1/SDK.zip", :sha256 => "ca44482374d295fe7a9bce2bacf4eddc066162b18090b68db66ffad2ce1cc478" }
   s.platform         = :ios, "12.0"
   s.frameworks = 'UIKit', 'WebKit', 'MediaPlayer', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox'
   s.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi', 'iconv'
   s.weak_frameworks = 'AppTrackingTransparency', 'CoreML', 'DeviceCheck'
 
   s.default_subspec = ['BUAdSDK']
-  
+
   s.subspec 'BUAdSDK' do |ss|
+    ss.dependency 'Kevin-Ad/PangleSDK'
+    ss.dependency 'Kevin-Ad/TikTokBusinessSDK'
+  end
+
+  s.subspec 'PangleSDK' do |ss|
     ss.vendored_frameworks = ['SDK/PAGAdSDK.xcframework']
     ss.preserve_paths = 'SDK/PAGAdSDK.xcframework'
     ss.resource = 'SDK/PAGAdSDK.bundle'
     ss.resource_bundles = {
         'AdsGlobalSDK' => ['SDK/PAGAdSDK.xcframework/ios-arm64/PAGAdSDK.framework/PrivacyInfo.xcprivacy']
+    }
+  end
+
+  s.subspec 'TikTokBusinessSDK' do |tss|
+    tss.vendored_frameworks = ['SDK/TikTokBusinessSDK.xcframework']
+    tss.preserve_paths = ['SDK/TikTokBusinessSDK.xcframework']
+    tss.resource_bundles = {
+        'TikTokBusinessSDK' => ['SDK/TikTokBusinessSDK.xcframework/ios-arm64/TikTokBusinessSDK.framework/PrivacyInfo.xcprivacy']
     }
   end
   
