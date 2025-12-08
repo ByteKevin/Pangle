@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Kevin-Ad'
-  s.version          = '7.7.7.1'
+  s.version          = '7.7.7.2'
   s.summary          = 'Kevin-Ad is a SDK from Bytedance providing union AD service.'
   s.description      = <<-DESC
   Kevin-Ad provides ADs which include native、banner、RewardVideo、FullscreenVideo etc.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.author           = { 'bytedance' => 'xxxx@bytedance.com' }
 
   s.homepage         = 'https://github.com/bytedance/Bytedance-UnionAD.git'
-  s.source           = { :http => "https://sf16-fe-tos-sg.i18n-pglstatp.com/obj/pangle-sdk-static-va/Debug/7.7.7.1/SDK.zip", :sha256 => "ca44482374d295fe7a9bce2bacf4eddc066162b18090b68db66ffad2ce1cc478" }
+  s.source           = { :http => "https://sf16-fe-tos-sg.i18n-pglstatp.com/obj/pangle-sdk-static-va/Debug/7.7.7.2/SDK.zip", :sha256 => "adf2d3e1baf3f1816a88cbeb7d21951dbe5375ba7c4a4e094a3baeaf43f21bfe" }
   s.platform         = :ios, "12.0"
   s.frameworks = 'UIKit', 'WebKit', 'MediaPlayer', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox'
   s.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi', 'iconv'
